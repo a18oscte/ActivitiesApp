@@ -1,9 +1,15 @@
 package com.example.brom.activitiesapp;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.view.View;
+import android.widget.Toast;
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +18,8 @@ public class MainActivity extends AppCompatActivity {
     private String[] mountainNames = {"Matterhorn","Mont Blanc","Denali"};
     private String[] mountainLocations = {"Alps","Alps","Alaska"};
     private int[] mountainHeights ={4478,4808,6190};
-    // Create ArrayLists from the raw data above and use these lists when populating your ListView.
+    public static final String EXTRA_MESSAGE = "com.example.brom.activitiesapp.extra.MESSAGE";
+    public static final String EXTRA_MESSAGE2 = "com.example.brom.activitiesapp.extra.MESSAGE2";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +53,17 @@ public class MainActivity extends AppCompatActivity {
         ListView myListView = (ListView)findViewById(R.id.my_listview);
         myListView.setAdapter(adapter);
 
+        myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String message = mountainArr.get(position).info();
+                String Title = mountainArr.get(position).namn();
+                launchSecondActivity(view, message, Title);
+            }
+        });
+
+
+
         // 1. Create a ListView as in previous assignment
         // 2. Create a new activity named "MountainDetailsActivity
         // 3. Create a new Layout file for the MountainDetailsActivity called
@@ -65,5 +83,11 @@ public class MainActivity extends AppCompatActivity {
         // 8. From the MountainDetailsActivity you should have an option to "go back" using an
         //    left arro button. This is done by letting the MainActivity be the parent activity to
         //    MountainDetailsActivity.
+    }
+    public void launchSecondActivity(View view, String n, String t) {
+        Intent intent = new Intent(this, MountainDetailsActivity.class);
+        intent.putExtra(EXTRA_MESSAGE, n);
+        intent.putExtra(EXTRA_MESSAGE2, t);
+        startActivity(intent);
     }
 }

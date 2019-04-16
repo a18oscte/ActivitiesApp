@@ -8,6 +8,8 @@
     android:paddingTop="12dp"
     android:paddingBottom="12dp"
     android:height="48dp"
-    android:textColor="#de000000">
+    android:textColor="#de000000"
+
+    >
 
 </TextView>
