@@ -1,11 +1,17 @@
 package com.example.brom.activitiesapp;
 
 import android.content.Intent;
+import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MountainDetailsActivity extends AppCompatActivity {
+
+    private ImageView Bild;
+    private int vBild;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +25,19 @@ public class MountainDetailsActivity extends AppCompatActivity {
         TextView textView = findViewById(R.id.namn);
         textView.setText(message);
         setTitle(Title);
+        Bild = (ImageView)findViewById(R.id.bild);
+
+        if(Title.equals("Kebnekaise")){
+            vBild = R.drawable.kebenikasie;
+        }else if(Title.equals("Matterhorn")){
+            vBild = R.drawable.matterhorn;
+        }else if(Title.equals("Mont Blanc")){
+            vBild = R.drawable.montblanc;
+        }else if(Title.equals("Denali")){
+            vBild = R.drawable.denali;
+        }
+
+        Bild.setImageResource(vBild);
 
     }
 }
