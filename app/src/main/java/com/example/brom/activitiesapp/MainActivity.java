@@ -62,27 +62,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
-        // 1. Create a ListView as in previous assignment
-        // 2. Create a new activity named "MountainDetailsActivity
-        // 3. Create a new Layout file for the MountainDetailsActivity called
-        //    "activity_mountaindetails". MountainDetailsActivity must have MainActivity as its
-        //        //    ´parent activity.
-        // 4. The layout file created in step 3 must have a LinearLayout
-        // 5. The layout file created in step 3 must be able to display
-        //    * Mountain Name
-        //    * Mountain Location
-        //    * Mountain Height
-        // 6. When tapping on a list item: create an Intent that includes
-        //    * Mountain Name
-        //    * Mountain Location
-        //    * Mountain Height
-        // 7. Display the MountainDetailsActivity with the data from the Intent created in step
-        //    6
-        // 8. From the MountainDetailsActivity you should have an option to "go back" using an
-        //    left arro button. This is done by letting the MainActivity be the parent activity to
-        //    MountainDetailsActivity.
     }
     public void launchSecondActivity(View view, String n, String t) {
         Intent intent = new Intent(this, MountainDetailsActivity.class);

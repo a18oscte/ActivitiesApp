@@ -13,7 +13,7 @@ public class Mountain {
 
     public String info(){
         String tmp;
-        tmp = "Location: " + location + "\nHeight: " + height;
+        tmp = "Location: " + location + "\nHeight: " + height + " meters";
 
         return tmp;
     }

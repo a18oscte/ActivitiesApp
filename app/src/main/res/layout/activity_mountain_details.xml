@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center_horizontal"
     tools:context="com.example.brom.activitiesapp.MountainDetailsActivity">
 
     <android.support.v7.widget.CardView
         android:layout_width="344dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="35dp"
         android:layout_marginTop="35dp"
         android:padding="16dp">
 
